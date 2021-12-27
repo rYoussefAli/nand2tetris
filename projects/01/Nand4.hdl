@@ -1,0 +1,12 @@
+// بسم الله
+
+CHIP Nand4 {
+
+    IN a[4], b[4];
+    OUT out[4];
+
+    PARTS:
+
+    And4 (a=a, b=b, out=t);
+    Not4 (in=t, out=out);
+}

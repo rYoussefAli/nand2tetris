@@ -1,0 +1,14 @@
+// بسم الله
+
+CHIP Not4 {
+
+    IN a[4];
+    OUT out[4];
+
+    PARTS:
+
+    Not4 (in=a[0], out=out[0]);
+    Not4 (in=a[1], out=out[1]);
+    Not4 (in=a[2], out=out[2]);
+    Not4 (in=a[3], out=out[3]);
+}
