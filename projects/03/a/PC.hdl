@@ -17,4 +17,44 @@ CHIP PC {
 
     PARTS:
     // Put your code here:
+    // Register(in=in, load=load, out=inm);
+
+    // Inc16(in=inm, out=in16);
+    // Mux16(a=inm, b=false, sel=reset, out=inres);
+    // Mux16(a=inres, b=in16, sel=inc, out=outv);
+    // Mux16(a=outv, b=in, sel=load, out=in1);
+    // Register(in=in1, load=true, out=out, out=inm);
+
+
+    Inc16(in=inm, out=in16);
+    Mux16(a=inm, b=in16, sel=inc, out=outv);
+
+    Mux16(a=in1, b=false, sel=reset, out=inres);
+    Mux16(a=outv, b=in, sel=load, out=in1);
+    Register(in=inres, load=true, out=out, out=inm);
+
+
+
+
+    // Inc16(in=oo, out=o1);//Add
+    // Mux16(a=oo, b=o1, sel=inc, out=o2);
+   
+    // Mux16(a=o2, b=in, sel=load, out=o3); //write
+   
+    // Mux16(a=o3, b=false, sel=reset, out=o4); //reset
+   
+    // Register(in=o4, load=true, out=out, out=oo);
+
+
+
+
+    // DMux16(in=outf, sel=inc, a=outfno, b=outfyes);
+    // Inc16(in=outfyes, out=outInc1);
+    // Mux16(a=outfno, b=outInc1, sel=inc, out=outt1);
+    // Register(in=outt1, load=inc, out=outt);
+    // DMux16(in=outt, sel=reset, a=resetno, b=resetyes);
+    // And16(a=resetno, b=resetno, out=out1);
+    // And16(a=resetyes, b=resetno, out=out2);
+    // Or16(a=out1, b=out2, out=outvv);
+    // Register(in=outvv, load=true, out=out);
 }
